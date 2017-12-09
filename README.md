@@ -1,6 +1,10 @@
 # saf7730_reverse_engineering
 SAF7730 reverse engineering material and data for analyzing how to toggle input source programmatically on a Opel CD30 Grundig Delphi variant.
 
+# Contributions
+
+Contributions are clearly welcome! Please create a pull request with your additional information or software you have. If you are not experienced with git(hub), then please also drop an e-mail. 
+
 # Goal
 Understand the communication protocol since there is no available public documentation.
 
