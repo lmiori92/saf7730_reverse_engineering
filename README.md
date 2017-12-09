@@ -21,6 +21,8 @@ https://github.com/huangjionghui/8803-project/tree/master/flyProject/driver/FlyA
 
 https://github.com/huangjionghui/mtk4Overseas/tree/master/driver-code/flydrv/FLY7741AUDIO
 
+http://www.crystalradio.cn/thread-578039-1-1.html
+
 You are invited to explore the code base, it contains several (possible) references to the datasheet's register names and the logic as well.
 
 # Pinout SAF7730HV
