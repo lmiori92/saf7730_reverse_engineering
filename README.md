@@ -31,3 +31,18 @@ http://magnitola.org/attachments/clarion/555822d1397136565-Magnitola-Avtozvuk-cl
 
 Clarion VRX765VD
 
+# I2C bus sniffing samples and decoded reports
+
+The repository contains a bunch of sampled "situations" e.g. switching from a source to another, raising or lowering the volume and power on/off sequences.
+
+All the sampled situations are done by using sigrok (actually, it's "pulseview" gui interface) and a Saleae Logic clone (I don't remeber on top of my head if it contains the open firmware for sigrok or the original cloned one...).
+
+.sr  : the sigrok session (10 Meg samples @ 1MHz)
+.csv : the csv file produced with a script I wrote in python to analyze data more easily and efficiently using LibreOffice Calc
+.ods : the final Open Document format containing the csv and some more protocol decoded data
+
+# Scripts
+
+i2c-sigrok-to-csv.py: running the i2c signal decoder on the .sr yields data that cannot be really analyed clearly in a spreadsheet and therefore I wrote a quick script to perform a nicer representation, where every i2c message is on one row.
+
+dsp_csv_data_to_bin.py: the captured power on sequence reveals that at least 2 parts of a firmware is loaded on the device. They could be also "only" 4Kb worth of registers, but I highly doubt it!
