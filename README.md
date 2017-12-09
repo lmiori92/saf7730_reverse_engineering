@@ -16,6 +16,14 @@ The ultimate goal is to exploit the phone-in switching and finally externally sw
 
 Since the phone line is mono only, perhaps the radio software cannot reliably work with it (e.g. volume adjust) and therefore my programming shall cover some more registers other than the source mux selector.
 
+# Target solution
+
+A AVR microcontroller that writes some registers to the device once the phone-in line has been selected.
+
+From the sampled i2c communication it appears the bus'MCU is quite busy sending and receiving data but there are times where the bus is free for more than 50ms and that's where we will be going to write our super-imposed register content.
+
+We don't know if i2c multi-master is supported by the radio's MCU and therefore the safest way is to just wait at least some milliseconds (to be determined from the sampled communication) after the last communication before writing our data.
+
 # Supporting material
 
 Code that uses a similar variant (SAF7741HV) which helped a lot in confirming some findings.
