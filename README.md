@@ -35,6 +35,8 @@ https://github.com/huangjionghui/mtk4Overseas/tree/master/driver-code/flydrv/FLY
 
 http://www.crystalradio.cn/thread-578039-1-1.html
 
+https://www.nxp.com/docs/en/data-sheet/SAA7724H.pdf   (some registers that are documented have names that are comparable or equal to the ones in this datasheet)
+
 You are invited to explore the code base, it contains several (possible) references to the datasheet's register names and the logic as well.
 
 # Pinout SAF7730HV
