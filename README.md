@@ -62,3 +62,13 @@ All the sampled situations are done by using sigrok (actually, it's "pulseview" 
 i2c-sigrok-to-csv.py: running the i2c signal decoder on the .sr yields data that cannot be really analyed clearly in a spreadsheet and therefore I wrote a quick script to perform a nicer representation, where every i2c message is on one row.
 
 dsp_csv_data_to_bin.py: the captured power on sequence reveals that at least 2 parts of a firmware is loaded on the device. They could be also "only" 4Kb worth of registers, but I highly doubt it!
+
+# The protocol
+
+The DSP appears to be a 24-bit unit since register addressing and reset vectors are all 24-bits long.
+
+A write is composed by the canonical i2c ADDRESS + R/W BIT, followed by a 24-bit address, followed by the data that shall be written to the registers and adjacent ones ( the length of a register is not intuitively 24-bits...it seems that it might vary? Or perhaps the write just does not replace the content of the missing bit).
+
+To initiate a read operation, a write operation with the requested address and no data is performed (i.e. like a normal write but with 0 data bytes)
+
+A read is composed by the canonical i2c ADDRESS + R/W BIT, followed by the data that is read at the previously pointed location. The master decides how many bytes to receive (?).
