@@ -85,3 +85,7 @@ A initial sample demo built around the arduino IDE is provided. I wouldn't yet c
 - source switching is one-way since no i2c sniffing is implemented. Unfortunately, the atmega328 i2c hardware does not allow to avoid sending the ACK when a R/W request is performed from the master and this blocks us using the hardware to sniff the bus (and know which input is currently selected). This is not really required; when the AUX input is no longer required, the user can simply select another source from the radio buttons e.g. FM radio or CD.
 - use the analog inputs to determine when an audio signal is feed into the AUX input. The microcontroller should perform some averaging of the samples and, if well above a certain limit, it should automatically switch to AUX.
 - rewrite the demo in plain C (avr-gcc).
+- the interrupt routine has some flaws: I don't know if micros() is optimized to some extend but might hide several operations. 
+- the analog input gain/attenuation (or digital gain/attenuation?) is different from the CD/FMRADIO source and therefore it would be great to either store a new gain table or periodically peeking the current gain level set by the radio's microcontroller and poke it immediately after with a modified gain.
+
+Unfortunately it is highly possible that I won't be able to work on this hardware any longer :-( But all the information is available and I'll make sure to get some photos with the required hardware modification as well. 
