@@ -5,12 +5,16 @@ SAF7730 reverse engineering material and data for analyzing how to toggle input 
 
 Contributions are clearly welcome! Please create a pull request with your additional information or software you have. If you are not experienced with git(hub), then please also drop an e-mail. 
 
-# Goal
+# Goal (29.12.2017: reached!)
 Understand the communication protocol since there is no available public documentation.
 
 My Opel CD30 has no AUXiliary input. Eletronic connection from outside is missing as well as the programming required. Interestingly, early Blaupunkt's were able to, but to possibly save some cents they have avoided including the required electronics by default. What a shame... A mono-only phone-in line is available and freely switchable by a signal pin that, when grounded, switches the radio receiver to "External In" mode.
 
 The ultimate goal is to exploit the phone-in switching and finally externally switching the input analog mux to AUX (which provides a stereo input!)
+
+It has been possible to inject the analog input mux selection to use the SAF7730's CD-ROM inputs (that are treated as AUX on the Delphi Grundig CD30). Adding a bunch of passive components the AUX input functionality is achieved :-)
+
+See below for the details on the test software.
 
 # Possible issues
 
@@ -71,4 +75,13 @@ A write is composed by the canonical i2c ADDRESS + R/W BIT, followed by a 24-bit
 
 To initiate a read operation, a write operation with the requested address and no data is performed (i.e. like a normal write but with 0 data bytes)
 
-A read is composed by the canonical i2c ADDRESS + R/W BIT, followed by the data that is read at the previously pointed location. The master decides how many bytes to receive (?).
+A read is composed by the canonical i2c ADDRESS + R/W BIT, followed by the data that is read at the previously pointed location. The master decides how many bytes to receive.
+
+# Atmega328P working demo
+
+A initial sample demo built around the arduino IDE is provided. I wouldn't yet call it usable as-is in the car since at least the following functionalities are missing:
+
+- the microcontroller should get into a sleep state when no activity is seen on the i2c bus i.e. radio off. Currently, the atmega328p board at 3.3v using the 8Mhz internal RC oscillator plus a always-lit led is drawing 8mA constantly. Power is directly connected to the CD30's main board microcontroller power rail.
+- source switching is one-way since no i2c sniffing is implemented. Unfortunately, the atmega328 i2c hardware does not allow to avoid sending the ACK when a R/W request is performed from the master and this blocks us using the hardware to sniff the bus (and know which input is currently selected). This is not really required; when the AUX input is no longer required, the user can simply select another source from the radio buttons e.g. FM radio or CD.
+- use the analog inputs to determine when an audio signal is feed into the AUX input. The microcontroller should perform some averaging of the samples and, if well above a certain limit, it should automatically switch to AUX.
+- rewrite the demo in plain C (avr-gcc).
