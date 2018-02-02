@@ -1,0 +1,112 @@
+Write	1C	0D	0	4D	0	0D	35	0	9	E8																
+Write	1C	0D	10	72	0F	FF																				
+Write	1C	0D	0	50	0	0D	35	0	9	E8																
+Write	1C	0D	10	73	0F	FF																				
+Write	1C	0D	2	69	0	1A	6B	0	1A	6B																
+Write	1C	0D	12	9B																						
+Read	1C	8	0																							
+Write	1C	0D	12	9C																						
+Read	1C	8	0																							
+Write	1C	0D	12	9D																						
+Read	1C	8	0																							
+Write	1C	0D	12	9D	0F	FF																				
+Write	1C	0D	12	9E																						
+Read	1C	8	0																							
+Write	1C	0D	12	9E	0F	FF																				
+Write	1C	1	0	CB																						
+Read	1C	3F	99	9F																						
+Write	1C	1	1	3																						
+Read	1C	0	0	0																						
+Write	1C	1	1	1																						
+Read	1C	6	B8	29																						
+Write	1C	1	0	CC																						
+Read	1C	7E	CD	5E																						
+Write	1C	1	0	CB																						
+Read	1C	3F	8D	D5																						
+Write	1C	1	1	3																						
+Read	1C	0	0	0																						
+Write	1C	1	1	1																						
+Read	1C	0A	0	D7																						
+Write	1C	1	0	CC																						
+Read	1C	7F	39	9A																						
+Write	1C	1	0	CB																						
+Read	1C	3E	AC	EC																						
+Write	1C	1	1	3																						
+Read	1C	0	0	0																						
+Write	1C	1	1	1																						
+Read	1C	9	A9	97																						
+Write	1C	1	0	CC																						
+Read	1C	7F	4F	93																						
+Write	1C	0D	10	93	0	0																				
+Write	1C	0D	10	94	0	0																				
+Write	1C	0D	10	9E	0	80																				
+Write	1C	0D	0	DA	28	7A	26																			
+Write	1C	0D	10	99	0	0	0	0																		
+Write	1C	0D	0	6A	0	0	31																			
+Write	1C	0D	0	D0	0	0	98																			
+Write	1C	0D	0	D1	0	0	9A																			
+Write	1C	0D	10	45	7	FF																				
+Write	1C	0D	10	1C	4	1C	3	E1	7	C7	8	3C	4	1C	3	E1	0	F5	7	C2	0	84	0C	3C		
+Write	1C	0D	0	69	0	1	18																			
+Write	1C	0D	0	6A	0	0	0A																			
+Write	1C	0D	10	1C	4	1C	3	E1	7	C7	8	3C	4	1C	3	E1	0	F5	7	C2	0	84	0C	3C		
+Write	1C	0D	0	69	0	1	22																			
+Write	1C	0D	0	6A	0	0	0A																			
+Write	1C	0D	10	1C	4	95	0	3A	1	2B	0	75	4	95	0	3A	1	0F	4	E0	4	99	0E	35		
+Write	1C	0D	0	69	0	1	2C																			
+Write	1C	0D	0	6A	0	0	0A																			
+Write	1C	0D	10	1C	4	95	0	3A	1	2B	0	75	4	95	0	3A	1	0F	4	E0	4	99	0E	35		
+Write	1C	0D	0	69	0	1	36																			
+Write	1C	0D	0	6A	0	0	0A																			
+Write	1C	0D	10	6B	0D	BF	7	FF																		
+Write	1C	0D	12	C5	0	0																				
+Write	1C	0D	10	3F	8	0	0F	EC																		
+Write	1C	0D	10	1C	7	F4	2	19	0C	0B	4	D8	0	5	6	6C	0	0	0	0	0F	FA	1	94	0F	9D
+Write	1C	0D	0	69	0	0	A7																			
+Write	1C	0D	0	6A	0	0	0B																			
+Write	1C	0D	10	1C	2	5B	5	2D	0	0																
+Write	1C	0D	0	69	0	0	B2																			
+Write	1C	0D	0	6A	0	0	3																			
+Write	1C	0D	12	9B																						
+Read	1C	8	0																							
+Write	1C	0D	12	9C																						
+Read	1C	8	0																							
+Write	1C	0D	12	9D																						
+Read	1C	0F	FF																							
+Write	1C	0D	12	9E																						
+Read	1C	0F	FF																							
+Write	1C	0D	12	C5																						
+Read	1C	0	0																							
+Write	1C	0D	12	C5	7	FF																				
+Write	1C	1	0	CC																						
+Read	1C	7E	6F	E0																						
+Write	1C	1	1	1																						
+Read	1C	0D	36	17																						
+Write	1C	1	1	13																						
+Read	1C	FF	D9	DF																						
+Write	1C	1	0	CB																						
+Read	1C	3E	1	A3																						
+Write	1C	1	1	3																						
+Read	1C	0	0	0																						
+Write	1C	1	1	1																						
+Read	1C	0A	D6	F5																						
+Write	1C	1	0	CC																						
+Read	1C	7F	FF	FF																						
+Write	1C	0D	10	1C	4	E0	7	F9	2	6C	0C	6	1	35	0	3	6	CA	0F	FC						
+Write	1C	0D	0	69	0	2	B6																			
+Write	1C	0D	0	6A	0	0	8																			
+Write	1C	0D	10	1C	0	A6	0F	89	1	C4	0	0	0E	3C												
+Write	1C	0D	0	69	0	2	BE																			
+Write	1C	0D	0	6A	0	0	5																			
+Write	1C	0D	12	CB	0	0																				
+Write	1C	0D	12	D1	0	0																				
+Write	1C	0D	12	C5	0	0																				
+Write	1C	1	0	CB																						
+Read	1C	3F	45	EA																						
+Write	1C	0D	0	4D	0	0D	35	0	9	E8																
+Write	1C	0D	10	72	8	0																				
+Write	1C	0D	0	50	0	0D	35	0	9	E8																
+Write	1C	0D	10	73	8	0																				
+Write	1C	0D	2	69	0	1A	6B	0	1A	6B																
+Write	1C	0D	12	9D	8	0																				
+Write	1C	0D	12	9E	8	0																				
