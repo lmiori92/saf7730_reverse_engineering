@@ -96,6 +96,61 @@ static void saf7730_input_mux_switch(uint8_t source)
     i2c_transfer_set_data(buf, sizeof(buf));
     i2c_transfer_start();
     i2c_transfer_successful();
+
+    /* setup the new gain for the given source */
+    buf[1] = 0x0D;
+    buf[2] = 0x10;
+    buf[3] = 0x45;
+
+    switch(source)
+    {
+    case SAF7730_INPUT_MUX_RADIO:
+        buf[4] = (uint8_t)((uint16_t)SAF7730_INPUT_GAIN_RADIO >> 8);
+        buf[5] = (uint8_t)(SAF7730_INPUT_GAIN_RADIO);
+        break;
+    case SAF7730_INPUT_MUX_CD:
+        buf[4] = (uint8_t)((uint16_t)SAF7730_INPUT_GAIN_CD >> 8);
+        buf[5] = (uint8_t)(SAF7730_INPUT_GAIN_CD);
+        break;
+    case SAF7730_INPUT_MUX_AUX:
+        buf[4] = (uint8_t)((uint16_t)SAF7730_INPUT_GAIN_AUX >> 8);
+        buf[5] = (uint8_t)(SAF7730_INPUT_GAIN_AUX);
+        break;
+    default:
+        break;
+    }
+
+    /* start the i2c transfer and wait for it */
+    i2c_transfer_set_data(buf, 6U);
+    i2c_transfer_start();
+    i2c_transfer_successful();
+
+    switch(source)
+    {
+    case SAF7730_INPUT_MUX_RADIO:
+        /* do not set any overridden gain value here */
+        break;
+    case SAF7730_INPUT_MUX_CD:
+        /* do not set any overridden gain value here */
+        break;
+    case SAF7730_INPUT_MUX_AUX:
+        /* set some more gain for the AUX input */
+        buf[1] = 0x0D;
+        buf[2] = 0x10;
+        buf[3] = 0x2D;
+        buf[4] = 0x07;
+        buf[5] = 0x00;
+        /* start the i2c transfer and wait for it */
+        i2c_transfer_set_data(buf, 6U);
+        i2c_transfer_start();
+        i2c_transfer_successful();
+        break;
+    default:
+        break;
+    }
+
+
+
 }
 
 static void source_select_next(void)

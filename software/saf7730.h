@@ -25,4 +25,8 @@
 #define SAF7730_INPUT_MUX_CD     (0x2B)  /* using the internal I2S DAC */
 #define SAF7730_INPUT_MUX_AUX    (0x19)  /* actually, this enables the CD-IN analog inputs, but Opel CD30 is using these as AUX */
 
+#define SAF7730_INPUT_GAIN_RADIO    (1825U)
+#define SAF7730_INPUT_GAIN_CD       (1626U)
+#define SAF7730_INPUT_GAIN_AUX      (2047U)  /* based on Phone input's gain */
+
 #endif /* SAF7730_H_ */
